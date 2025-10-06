@@ -21,6 +21,8 @@ class Config:
 
     # LangSmith
     LANGSMITH_API_KEY = os.getenv('LANGSMITH_API_KEY') or os.getenv('LANGSMITH_API', '')
-
+    LANGSMITH_TRACING = os.getenv('LANGSMITH_TRACING', 'false').lower() == 'true'
+    LANGSMITH_ENDPOINT = os.getenv('LANGSMITH_ENDPOINT', 'https://api.smith.langchain.com')
+    
     # LLM Providers (used by underlying SDKs)
     GROQ_API_KEY = os.getenv('GROQ_API_KEY') or os.getenv('GROQ_API', '')
