@@ -56,11 +56,12 @@ LangGraph-RAG-Weather/
 
 ### 1️⃣ Clone the Repository
 
-```bash
+```
+bash
 git clone https://github.com/<your-username>/LangGraph-RAG-Weather.git
 cd LangGraph-RAG-Weather
 
-````
+```
 
 ### 2️⃣ Create and Activate Virtual Environment
 
@@ -95,12 +96,14 @@ LANGSMITH_API =
 
 Run Qdrant using Docker (recommended):
 
+```
 docker run -p 6333:6333 qdrant/qdrant
-
+```
 ### 2️⃣ Launch the Streamlit App
 
+```
 streamlit run app/streamlit_app.py
-
+```
 Then open your browser at http://localhost:8501
 
 ##💬 How It Works
@@ -203,3 +206,5 @@ pip install sentence-transformers
 Rexon David Pambujya
 📍 Mumbai, India
 📧 rexonpambujya2001@gmail.com
+
+````
