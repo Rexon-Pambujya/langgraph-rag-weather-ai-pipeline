@@ -25,6 +25,7 @@ This project demonstrates an **agentic AI pipeline** built using **LangChain**, 
 
 ## 🏗️ Project Structure
 
+````
 LangGraph-RAG-Weather/
 │
 ├── src/
@@ -48,6 +49,7 @@ LangGraph-RAG-Weather/
 ├── .env.example # Example environment variables
 └── README.md # Documentation (this file)
 
+```
 ---
 
 ## ⚙️ Setup Instructions
@@ -58,7 +60,7 @@ LangGraph-RAG-Weather/
 git clone https://github.com/<your-username>/LangGraph-RAG-Weather.git
 cd LangGraph-RAG-Weather
 
-```
+````
 
 ### 2️⃣ Create and Activate Virtual Environment
 
