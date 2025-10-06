@@ -2,8 +2,6 @@
 
 This project demonstrates an **agentic AI pipeline** built using **LangChain**, **LangGraph**, and **LangSmith** — integrating **real-time weather fetching** via OpenWeatherMap API and **document-based question answering** (RAG) using **Qdrant vector database** and **Hugging Face embeddings**.
 
----
-
 ## 🚀 Features
 
 - **Agentic Decision Pipeline** (via `LangGraph`):
@@ -21,11 +19,9 @@ This project demonstrates an **agentic AI pipeline** built using **LangChain**, 
 - **Streamlit UI**:
   - User-friendly interface for chatting and PDF ingestion.
 
----
-
 ## 🏗️ Project Structure
 
-````
+```
 LangGraph-RAG-Weather/
 │
 ├── src/
@@ -50,6 +46,7 @@ LangGraph-RAG-Weather/
 └── README.md # Documentation (this file)
 
 ```
+
 ---
 
 ## ⚙️ Setup Instructions
@@ -57,7 +54,6 @@ LangGraph-RAG-Weather/
 ### 1️⃣ Clone the Repository
 
 ```
-bash
 git clone https://github.com/<your-username>/LangGraph-RAG-Weather.git
 cd LangGraph-RAG-Weather
 
@@ -99,11 +95,13 @@ Run Qdrant using Docker (recommended):
 ```
 docker run -p 6333:6333 qdrant/qdrant
 ```
+
 ### 2️⃣ Launch the Streamlit App
 
 ```
 streamlit run app/streamlit_app.py
 ```
+
 Then open your browser at http://localhost:8501
 
 ##💬 How It Works
@@ -206,5 +204,3 @@ pip install sentence-transformers
 Rexon David Pambujya
 📍 Mumbai, India
 📧 rexonpambujya2001@gmail.com
-
-````
