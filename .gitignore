@@ -1,0 +1,48 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Virtual environments ---
+venv/
+env/
+.venv/
+ENV/
+
+# --- OS-specific files ---
+.DS_Store
+Thumbs.db
+
+# --- IDEs ---
+.vscode/
+.idea/
+
+# --- Build artifacts ---
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# --- Cache & Temp files ---
+.cache/
+.pytest_cache/
+.mypy_cache/
+.tox/
+.coverage
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# --- Project-specific ---
+.env
+.tmp_uploads/
+Makefile
+
+# --- Jupyter & notebooks ---
+.ipynb_checkpoints/
+
+# --- LangChain specific (optional) ---
+langchain_cache/
+langchain_logs/
