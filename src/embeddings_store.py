@@ -16,6 +16,12 @@ def create_qdrant_client():
     )
 
 def upsert_documents_to_qdrant(docs: List[Document], collection_name: str = None):
+    ''' Upsert a list of langchain Document objects to Qdrant vector store. 
+        If collection_name is not provided, use the one from Config.
+    '''
+
+    # Use default collection name if not provided in function call or environment variable 
+
     collection_name = collection_name or Config.QDRANT_COLLECTION_NAME
     # Filter out empty chunks that would cause embedding generation to return []
     non_empty_docs = [d for d in docs if getattr(d, 'page_content', '') and d.page_content.strip()]
@@ -24,7 +30,10 @@ def upsert_documents_to_qdrant(docs: List[Document], collection_name: str = None
     embeddings = get_embeddings_model()
     client = create_qdrant_client()
 
-    # Ensure collection exists with correct vector size
+    # Ensure collection exists with correct vector size to avoid 404 on first query
+    # If the collection already exists, this will raise an exception which we catch and ignore
+    # This is simpler than checking first if it exists
+
     try:
         client.get_collection(collection_name)
     except Exception:
@@ -42,11 +51,15 @@ def upsert_documents_to_qdrant(docs: List[Document], collection_name: str = None
     return vectorstore
 
 def get_qdrant_vectorstore(collection_name: str = None):
+
+    ''' Get a Qdrant vector store instance. If collection_name is not provided, use the one from Config.
+        If the collection does not exist, create an empty one to avoid 404 on first query.
+    '''
     collection_name = collection_name or Config.QDRANT_COLLECTION_NAME
     embeddings = get_embeddings_model()
     client = create_qdrant_client()
 
-    # Create empty collection if it doesn't exist to avoid 404 on first query
+    # Create empty collection if it doesn't exist to avoid 404 on first query 
     try:
         client.get_collection(collection_name)
     except Exception:

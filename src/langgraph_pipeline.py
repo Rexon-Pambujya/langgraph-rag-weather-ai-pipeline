@@ -13,7 +13,7 @@ def desicion_node(state: Dict[str, Any], *_, **__):
       - else -> choose pdf_rag
     """
     text_l = state['input'].lower()
-    weather_terms = ['weather', 'wheather', 'temperature', 'forecast', 'humidity', 'rain', 'wind', 'climate']
+    weather_terms = ['weather', 'wheather', 'temperature', 'forecast', 'humidity', 'rain', 'wind', 'climate','temp']
     if any(kw in text_l for kw in weather_terms):
         state["action"] = "weather"
     else:
@@ -22,11 +22,11 @@ def desicion_node(state: Dict[str, Any], *_, **__):
 
 def weather_node(state: Dict[str, Any]):
 
-    # parse city from input, default to Config.DEFAULT_CITY
+    # parse city from input, default to Config.DEFAULT_CITY if not found or empty 
 
     text = state.get('input', "")
 
-    # naive extraction of city name
+    # naive extraction of city name after "in " 
 
     city = None
     parts = text.lower().split("in ")
@@ -59,6 +59,11 @@ def llm_postprocess_node(state: Dict[str, Any]):
     return state
 
 def build_graph():
+    
+    ''' Build and return the state graph for the pipeline. 
+    The graph has the following structure:
+        START -> desicion -> (weather | pdf_rag) -> llm_postprocess -> END
+    '''
     sg = StateGraph(dict)
     sg.add_node("desicion", desicion_node)
     sg.add_node("weather", weather_node)
