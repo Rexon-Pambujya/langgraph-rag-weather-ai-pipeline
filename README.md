@@ -104,8 +104,9 @@ streamlit run app/streamlit_app.py
 
 Then open your browser at http://localhost:8501
 
-##💬 How It Works
-###🧩 1. LangGraph Decision Logic
+## 💬 How It Works
+
+### 🧩 1. LangGraph Decision Logic
 
 The pipeline first analyzes the user query:
 
@@ -113,7 +114,7 @@ If it contains words like weather, temperature, forecast, it triggers the weathe
 
 Otherwise, it invokes the PDF RAG agent.
 
-###🌦️ 2. Weather Agent
+### 🌦️ 2. Weather Agent
 
 Calls fetch_weather_by_city() from weather.py.
 
@@ -184,7 +185,7 @@ PDF RAG:
 
 “Summarize the introduction section of the uploaded document.”
 
-🧰 Troubleshooting
+## 🧰 Troubleshooting
 
 Qdrant not reachable?
 Ensure Docker container is running at http://localhost:6333.
@@ -199,7 +200,7 @@ Install sentence-transformers manually:
 pip install sentence-transformers
 ```
 
-👨‍💻 Author
+## 👨‍💻 Author
 
 Rexon David Pambujya
 📍 Mumbai, India
