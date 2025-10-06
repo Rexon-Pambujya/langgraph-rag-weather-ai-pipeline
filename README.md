@@ -1,3 +1,5 @@
+![Ui of Project](image.png)
+
 # 🌤️ LangGraph RAG + Weather App
 
 This project demonstrates an **agentic AI pipeline** built using **LangChain**, **LangGraph**, and **LangSmith** — integrating **real-time weather fetching** via OpenWeatherMap API and **document-based question answering** (RAG) using **Qdrant vector database** and **Hugging Face embeddings**.
